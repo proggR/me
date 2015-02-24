@@ -27,5 +27,15 @@ $(document).ready(function(){
 		$('html,body').animate({scrollTop: 0},'slow');
 		return false;
 	});	
-
+	var title_idx = 0;
+	var titles = ['Developer','Advisor','Imagineer'];
+	setInterval(function () {
+		var idx = $('#nav-title').attr('data-idx');
+		if(idx == 2) idx = 0;
+		else idx++;
+		var title = titles[idx];
+		$('#nav-title').text(title);
+		$('#nav-title').attr('data-idx',idx);
+		}, 
+		3000);
 });
